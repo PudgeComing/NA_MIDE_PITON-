@@ -14,9 +14,11 @@ print("\nAll numbers: ", str(extract_com_num))
 
 print("\nAll words between numbers: ", str(extract_com_let))
 # Виведення першої та останньої букви в першому реєстрі
+row_new_list=[]
 for let in extract_letter.split():
-    print("\nCapital first and last letters of each word: ", let[0].upper() + let[-1].upper(), end="\n")
-
+    row_new_list.append(let[0].upper() + let[1:-1].lower() + let[-1].upper())
+upper_let=" ".join(row_new_list)
+print("\nCapital first and last letters of each word: ", upper_let)
 # Робимо з рядка список, щоб потім звертатися до конкретних елементів
 new_num_max=list(map(int, extract_number.split()))
 # Максимальне значення нового списку
